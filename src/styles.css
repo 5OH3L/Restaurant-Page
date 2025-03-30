@@ -1,0 +1,117 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.2rem);
+}
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+header nav button{
+    background: none;
+    border: none;
+    background-color: rgba;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgba(0, 174, 255, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+#homepage-header{
+    height: 90vh;
+    width: 100vw;
+    background-image: url("./images/hompage-header-background.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 5rem;
+}
+#homepage-header-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    color: white;
+}
+
+#homepage-header-top h1{
+    font-size: 5rem;
+    color: skyblue;
+}
+.homepage-header-top-mid{
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(0.6rem);
+    border-radius: 1rem;
+    border: 2px solid white;
+}
+#homepage-header-top .homepage-header-top-mid p {
+    max-width: 30vw;
+}
+#homepage-header-top h1,#homepage-header-top .homepage-header-top-mid h2, #homepage-header-top .homepage-header-top-mid p{
+    text-shadow: 0 0 5rem black;
+}
+#homepage-header-top button{
+    background: none;
+    border: 2px solid skyblue;
+    color: inherit;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(0.5rem);
+    will-change: transform;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0 0 5rem black;
+}
+#homepage-header-top button:hover{
+    transform: scale(1.05);
+}
+#homepage-header-top button:active{
+    transform: scale(0.95);
+}
+
+#homepage-header-bottom{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;pointer-events: none;
+}
+#homepage-header-background-credit{
+    position: absolute;
+    bottom: 0;
+    right: 3%;
+    color: white;
+}
+#homepage-header-background-credit a{
+    color: white;
+}
+/* Homepage Main Section */
+.homepage-main-sections{
+    height: 100vh;
+    width: 100%;
+    border: 2px solid white;
+}
