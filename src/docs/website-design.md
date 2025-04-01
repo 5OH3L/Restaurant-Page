@@ -30,7 +30,8 @@
 
 ## Pages
 
-### Home
+### Home Page
+### ➠ [View Homepage Layout](./assets/Home%20Page%20[%20Restaurant%20].svg)
 #### Hero Section
 - Large Heading  
 - Short Description  
