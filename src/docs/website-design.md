@@ -45,7 +45,7 @@
 - **Large Heading**  
 - **Dishes Section**:  
   - Category Options: **Main Course, Desserts, Drinks**  
-  - Dishes displayed according to category (Image, Name, Short Description & Price)  
+  - Dishes displayed according to category (Image, Name & Price)  
 
 ### About
 - Large Heading (for different sections)  
