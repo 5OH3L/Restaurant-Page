@@ -18,6 +18,7 @@
   "homepage": "https://github.com/5OH3L/Restaurant-Page#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
     "webpack": "^5.98.0",
