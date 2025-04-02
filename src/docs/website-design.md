@@ -49,6 +49,7 @@
   - Dishes displayed according to category (Image, Name & Price)
 
 ### About
+### ➠ [View About Page Layout](./assets/Menu%20Page%20[%20Restaurant%20].svg)
 - Large Heading (for different sections)
 - Description about the restaurant
 - Location of the restaurant
