@@ -9,6 +9,9 @@
 :root {
     --header-height: 10vh;
 }
+body::selection{
+    background-color: rgba(135, 206, 235, 0.5);
+}
 
 #header {
     height: var(--header-height);
@@ -220,15 +223,12 @@
 }
 
 #home-page-main-header {
-    padding: 0 10vw;
-    color: white;
-}
-
-#home-page-main-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding: 0 10vw;
+    color: white;
     gap: 2rem;
 }
 
@@ -254,7 +254,34 @@
     color: white;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    font-weight: bold;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.4rem;
     cursor: pointer;
+    position: relative;
+    will-change: transform, color;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+#home-page-main-header button:hover{
+    color: black;
+    transform: scale(1.05);
+}
+#home-page-main-header button:active{
+    transform: scale(0.95);
+}
+#home-page-main-header button::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    position: absolute;
+    will-change: transform;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+#home-page-main-header button:hover::before{
+    transform: scaleX(1);
 }
