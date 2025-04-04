@@ -1,12 +1,16 @@
-*,*::before,*::after{
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --header-height: 15vh;
+
+:root {
+    --header-height: 10vh;
 }
-#header{
+
+#header {
     height: var(--header-height);
     width: 100%;
     display: flex;
@@ -14,36 +18,118 @@
     align-items: center;
     position: fixed;
     top: 0;
-    border: 2px solid black;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(0.1rem);
     padding: 0 5rem;
     z-index: 10;
 }
-#header #logo{
-    height: 5rem;
-    width: 5rem;
+
+#header #logo-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5vw;
+    gap: 1rem;
+}
+#programmer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    will-change: transform;
+    transition: transform 0.5s ease;
+}
+#programmer:hover{
+    transform: scale(1.05);
+}
+#programmer:active{
+    transform: scale(0.95);
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+#programmer::before, #programmer::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 120%;
+    width: 110%;
+    background-image: conic-gradient(from var(--angle),skyblue, gray, blueviolet, deepskyblue, skyblue);
+    border-radius: 0.5rem;
+    z-index: -1;
+    animation: 5s spin linear infinite;
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.5s ease;
+}
+#programmer:hover::before, #programmer:hover::after{
+    opacity: 1;
+}
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+#programmer::before{
+    filter: blur(1rem);
+}
+
+#programmer a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    will-change: background-color, padding;
+    transition: background-color 0.5s ease;
+}
+#programmer:hover a{
+    background-color: black;
+}
+
+#header #logo {
+    height: calc(var(--header-height) * 0.8);
+    width: calc(var(--header-height) * 0.8);
     background-image: url(../assets/logo.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 100%;
     border: 2px solid white;
 }
-#header nav{
+
+#header nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0.5rem 1rem;
     gap: 1rem;
+    position: relative;
 }
-#header #logo-container, #header nav{
+
+#header #logo-container,
+#header nav {
     flex: 1;
 }
-.page-links{
+
+.page-links {
+    color: white;
     background: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     font-size: large;
     font-weight: bold;
     border-radius: 0.5rem;
@@ -51,24 +137,69 @@
     will-change: transform;
     transition: transform 0.3s ease;
 }
-.page-links:hover{
-    transform: scale(1.05);
+
+.page-links::before {
+    content: "";
+    position: absolute;
+    height: 5%;
+    width: 100%;
+    background-color: skyblue;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    will-change: transform;
+    transition: transform 0.3s ease;
 }
-.page-links:active{
-    transform: scale(0.95);
+
+.page-links::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(135, 206, 235, 0.3);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scaleY(0);
+    will-change: transform;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
-#content{
+.page-links:active::after {
+    background-color: rgba(135, 206, 235, 0.4);
+}
+
+.page-links:hover::before {
+    transform: scaleX(1);
+}
+
+.page-links:hover::after {
+    transform: scaleY(1);
+}
+.page-links.active::before,.page-links.active::after{
+    transform: scaleX(1);
+    transform: scaleY(1);
+}
+.page-links.active::after{
+    background-color: rgba(135, 206, 235, 0.1);
+}
+
+#content {
     height: 100%;
     width: 100%;
 }
-#home-page-background-overlay,#home-page-main,#home-page-main-header{
+
+#home-page-background-overlay,
+#home-page-main,
+#home-page-main-header {
     height: 100%;
     width: 100%;
 }
-#home-page{
+
+#home-page {
     height: 100vh;
     width: 100%;
 }
+
 #home-page-background-overlay::after {
     content: "";
     position: absolute;
@@ -76,9 +207,10 @@
     height: 100%;
     backdrop-filter: blur(0.3rem);
     background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none; 
-  }
-#home-page-background-overlay{
+    pointer-events: none;
+}
+
+#home-page-background-overlay {
     position: absolute;
     background-image: url(../assets/main-background.jpg);
     background-size: cover;
@@ -86,31 +218,37 @@
     background-repeat: no-repeat;
     z-index: -1;
 }
-#home-page-main-header{
+
+#home-page-main-header {
     padding: 0 10vw;
     color: white;
 }
-#home-page-main-header{
+
+#home-page-main-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
 }
-#home-page-main-header-heading{
+
+#home-page-main-header-heading {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 4rem;
 }
-#home-page-main-header-heading span{
+
+#home-page-main-header-heading span {
     letter-spacing: 1rem;
 }
-#home-page-main-header p{
+
+#home-page-main-header p {
     font-size: 1.2rem;
     max-width: 50vw;
 }
-#home-page-main-header button{
+
+#home-page-main-header button {
     background: none;
     border: 2px solid white;
     color: white;
