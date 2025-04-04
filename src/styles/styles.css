@@ -261,12 +261,13 @@ body::selection{
     border-radius: 0.4rem;
     cursor: pointer;
     position: relative;
-    will-change: transform, color;
-    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform, color, box-shadow;
+    transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 #home-page-main-header button:hover{
     color: black;
     transform: scale(1.05);
+    box-shadow: 0 0 1rem 0 gray;
 }
 #home-page-main-header button:active{
     transform: scale(0.95);
