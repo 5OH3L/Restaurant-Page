@@ -9,6 +9,10 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
+    devtool: "eval-source-map",
+    devServer: {
+        watchFiles: ["./src/templates/index.html"],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/templates/index.html",
