@@ -194,13 +194,13 @@ body::selection {
     transform: scaleY(1);
 }
 
-.page-links.active::before,
-.page-links.active::after {
+.page-links.selected::before,
+.page-links.selected::after {
     transform: scaleX(1);
     transform: scaleY(1);
 }
 
-.page-links.active::after {
+.page-links.selected::after {
     background-color: rgba(135, 206, 235, 0.1);
 }
 
