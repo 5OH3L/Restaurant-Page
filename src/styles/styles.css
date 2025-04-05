@@ -209,18 +209,19 @@ body::selection {
     width: 100%;
 }
 
+#home-page {
+    height: 200vh;
+    width: 100%;
+}
+#home-page-main{
+    height: 100vh;
+    width: 100%;
+}
 #home-page-background,
-#home-page-main,
 #home-page-main-header {
     height: 100%;
     width: 100%;
 }
-
-#home-page {
-    height: 100vh;
-    width: 100%;
-}
-
 #home-page-background::after {
     content: "";
     position: absolute;
@@ -327,7 +328,7 @@ body::selection {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(100,100,100);
     z-index: -1;
 }
 
@@ -412,4 +413,56 @@ body::selection {
 
 #home-page-featured-dishes-kabsa-image {
     background-image: url(../assets/dish-images/food-kabsa.jpg);
+}
+footer{
+    height: 30vh;
+    width: 100%;
+    color: white;
+    background-color: #343434;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contact-us{
+    height: 100%;
+    width: 100%;
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+#contact-us-main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#contact-us-contacts, #contact-us-social-media{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+#contact-us-copyright{
+    align-self: center;
+}
+#contact-us-social-media p a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.5rem;
+    will-change: transform, color, background-color;
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+#contact-us-social-media p a:hover{
+    color: black;
+    background-color: white;
+    transform: scale(1.05);
+}
+#contact-us-social-media p a:active{
+    transform: scale(0.95);
 }
