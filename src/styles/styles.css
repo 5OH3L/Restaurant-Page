@@ -141,18 +141,16 @@ body::selection {
 }
 
 .page-links {
+    position: relative;
     color: white;
     background: none;
     border: none;
     padding: 1rem 1.5rem;
     font-family: "Montserrat", sans-serif;
-    ;
     font-size: large;
     font-weight: bold;
     border-radius: 0.5rem;
     cursor: pointer;
-    will-change: transform;
-    transition: transform 0.3s ease;
 }
 
 .page-links::before {
@@ -173,17 +171,17 @@ body::selection {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(135, 206, 235, 0.3);
+    background-image: linear-gradient(transparent, rgba(135, 206, 235, 0.4));
     top: 0;
     left: 0;
     z-index: -1;
     transform: scaleY(0);
-    will-change: transform;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    will-change: transform, background-image;
+    transition: transform 0.3s ease, background-image 0.3s ease;
 }
 
 .page-links:active::after {
-    background-color: rgba(135, 206, 235, 0.4);
+    background-image: linear-gradient(transparent, rgba(135, 206, 235, 0.5));
 }
 
 .page-links:hover::before {
@@ -201,7 +199,7 @@ body::selection {
 }
 
 .page-links.selected::after {
-    background-color: rgba(135, 206, 235, 0.1);
+    background-image: linear-gradient(transparent, rgba(135, 206, 235, 0.2));
 }
 
 #content {
