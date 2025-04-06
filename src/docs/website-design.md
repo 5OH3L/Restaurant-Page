@@ -31,7 +31,7 @@
 ## Pages
 
 ### Home Page
-### ➠ [View Home Page Layout](./assets/Home%20Page%20[%20Restaurant%20].svg)
+### ➠ [View Home Page Layout](./assets/restaurant-home-page.svg)
 #### Hero Section
 - Large Heading
 - Short Description
@@ -42,14 +42,14 @@
 - 3 Featured Dishes (Image + Short Description)
 
 ### Menu
-### ➠ [View Menu Page Layout](./assets/Menu%20Page%20[%20Restaurant%20].svg)
+### ➠ [View Menu Page Layout](./assets/restaurant-menu-page.svg)
 - **Large Heading**
 - **Dishes Section**:
   - Category Options: **Main Course, Desserts, Drinks**
   - Dishes displayed according to category (Image, Name & Price)
 
 ### About
-### ➠ [View About Page Layout](./assets/Menu%20Page%20[%20Restaurant%20].svg)
+### ➠ [View About Page Layout](./assets/restaurant-about-page.svg)
 - Large Heading (for different sections)
 - Description about the restaurant
 - Location of the restaurant
