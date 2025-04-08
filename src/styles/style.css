@@ -508,6 +508,29 @@ body::selection {
     transform: scale(1.03);
 }
 
+.menu-page-main-dish-image {
+    height: 12vw;
+    width: 12vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0.2rem solid lightgray;
+    border-radius: 0.5rem;
+}
+.menu-page-main-dish-image a {
+    height: 100%;
+    width: 100%;
+    display: block;
+    opacity: 0;
+}
+.menu-page-main-dish-name {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5rem;
+}
+
 .menu-page-main-dish-description {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -518,35 +541,10 @@ body::selection {
     height: 10vh;
 }
 
-.menu-page-main-dish-name {
-    max-width: 100%;
-    white-space: nowrap;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.5rem;
-}
-
 .menu-page-main-dish-price {
     width: 100%;
     font-size: 1.4rem;
     text-align: left;
-}
-
-.menu-page-main-dish-image {
-    height: 10rem;
-    width: 10rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 0.2rem solid lightgray;
-    border-radius: 0.5rem;
-}
-
-.menu-page-main-dish-image a {
-    height: 100%;
-    width: 100%;
-    display: block;
-    opacity: 0;
 }
 
 #menu-page-main-background {
