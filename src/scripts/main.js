@@ -1,11 +1,19 @@
 import "../styles/style.css"
 import "../styles/utils.css"
+
+import programmerLogo from "../assets/logo.jpg"
+
 import HomePage from "./home-page"
 import MenuPage from "./menu-page"
+import AboutPage from "./about-page"
 
 const homeButton = document.getElementById('button-home')
 const menuButton = document.getElementById('button-menu')
 const aboutButton = document.getElementById('button-about')
+
+function initImages(){
+    document.getElementById('logo').style.backgroundImage = `url(${programmerLogo})`
+}
 
 function init() {
     homeButton.addEventListener('click', handleSelected)
@@ -21,18 +29,49 @@ function removeSelectedAll() {
     aboutButton.classList.remove('selected')
 }
 
+function removeCurrentContent() {
+    const content = document.getElementById('content')
+    let activeTab = content.dataset.activeTab
+
+    switch (activeTab) {
+        case "home-page":
+            HomePage.remove()
+            break;
+        case "menu-page":
+            MenuPage.remove()
+            break;
+        case "about-page":
+            AboutPage.remove()
+            break;
+    }
+}
+function loadSelectedContent(e) {
+    let selectedTab = e.target.dataset.tab
+
+    switch (selectedTab) {
+        case "home":
+            HomePage.load()
+            break;
+        case "menu":
+            MenuPage.load()
+            break;
+        case "about":
+            AboutPage.load()
+            break;
+    }
+}
+
 function handleSelected(e) {
     if (e.target.classList.contains('selected')) return
+
     removeSelectedAll()
     e.target.classList.add('selected')
-    if (e.target.dataset.tab === "home") {
-        MenuPage.remove()
-        HomePage.load()
-    } else if (e.target.dataset.tab === "menu") {
-        HomePage.remove()
-        MenuPage.load()
-    }
+
+    removeCurrentContent()
+    loadSelectedContent(e)
+
     window.scrollTo(0, 0)
 }
 
 init()
+initImages()

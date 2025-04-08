@@ -1,3 +1,5 @@
+import menuPageBackgroundImage from "../assets/menu-background.jpg"
+
 const menu = [
     {
         name: "Mandi",
@@ -248,6 +250,7 @@ function loadMenuPage() {
 
     const menuPageMainBackground = document.createElement('div')
     menuPageMainBackground.id = "menu-page-main-background"
+    menuPageMainBackground.style.backgroundImage = `url(${menuPageBackgroundImage})`
     menuPageMain.appendChild(menuPageMainBackground)
 
     const menuPageMainHeader = document.createElement('div')

@@ -1,3 +1,5 @@
+import aboutPageBackgroundImage from "../assets/about-background.jpg"
+
 function loadAboutPage(){
     const content = document.getElementById('content')
     content.innerHTML = ""
@@ -8,6 +10,7 @@ function loadAboutPage(){
 
     const aboutPageBackground = document.createElement('div')
     aboutPageBackground.id = "about-page-background"
+    aboutPageBackground.style.backgroundImage = `url(${aboutPageBackgroundImage})`
     aboutPageContainer.appendChild(aboutPageBackground)
 
     const aboutPageHeaderContainer = document.createElement('section')

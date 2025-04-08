@@ -1,3 +1,8 @@
+import homePageBackgroundImage from "../assets/main-background.jpg"
+import homePageFeaturedDishesMandiImage from "../assets/dish-images/food-mandi.jpg"
+import homePageFeaturedDishesShawarmaImage from "../assets/dish-images/food-shawarma.jpg"
+import homePageFeaturedDishesKabsaImage from "../assets/dish-images/food-kabsa.jpg"
+
 function loadHomePage() {
     const content = document.getElementById('content')
     content.innerHTML = ""
@@ -12,6 +17,7 @@ function loadHomePage() {
 
     const homePageBackground = document.createElement('div')
     homePageBackground.id = "home-page-background"
+    homePageBackground.style.backgroundImage = `url(${homePageBackgroundImage})`
     homePageMain.appendChild(homePageBackground)
 
     const homePageMainHeader = document.createElement('div')
@@ -71,6 +77,7 @@ function loadHomePage() {
     const homePageFeaturedDishesMandiDishImage = document.createElement('div')
     homePageFeaturedDishesMandiDishImage.id = "home-page-featured-dishes-mandi-image"
     homePageFeaturedDishesMandiDishImage.classList.add('dish-image')
+    homePageFeaturedDishesMandiDishImage.style.backgroundImage = `url(${homePageFeaturedDishesMandiImage})`
     homePageFeaturedDishesMandiDishImageWrapper.appendChild(homePageFeaturedDishesMandiDishImage)
 
     const homePageFeaturedDishesMandiTitle = document.createElement('h2')
@@ -95,6 +102,7 @@ function loadHomePage() {
     const homePageFeaturedDishesShawarmaDishImage = document.createElement('div')
     homePageFeaturedDishesShawarmaDishImage.id = "home-page-featured-dishes-shawarma-image"
     homePageFeaturedDishesShawarmaDishImage.classList.add('dish-image')
+    homePageFeaturedDishesShawarmaDishImage.style.backgroundImage = `url(${homePageFeaturedDishesShawarmaImage})`
     homePageFeaturedDishesShawarmaDishImageWrapper.appendChild(homePageFeaturedDishesShawarmaDishImage)
 
     const homePageFeaturedDishesShawarmaTitle = document.createElement('h2')
@@ -119,6 +127,7 @@ function loadHomePage() {
     const homePageFeaturedDishesKabsaDishImage = document.createElement('div')
     homePageFeaturedDishesKabsaDishImage.id = "home-page-featured-dishes-kabsa-image"
     homePageFeaturedDishesKabsaDishImage.classList.add('dish-image')
+    homePageFeaturedDishesKabsaDishImage.style.backgroundImage = `url(${homePageFeaturedDishesKabsaImage})`
     homePageFeaturedDishesKabsaDishImageWrapper.appendChild(homePageFeaturedDishesKabsaDishImage)
 
     const homePageFeaturedDishesKabsaTitle = document.createElement('h2')
