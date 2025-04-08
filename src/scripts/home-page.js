@@ -1,7 +1,7 @@
-function loadHomePage(){
-    // Clear existing content if present
+function loadHomePage() {
     const content = document.getElementById('content')
     content.innerHTML = ""
+    content.dataset.activeTab = "home-page"
 
     const homePageContainer = document.createElement('section')
     homePageContainer.id = "home-page"
@@ -24,7 +24,7 @@ function loadHomePage(){
     homePageMainHeader.appendChild(homePageMainHeaderHeadingContainer)
 
     const homePageMainHeaderHeading = document.createElement('h1')
-    homePageMainHeaderHeading.classList.add('font-montserrat','font-weight-normal')
+    homePageMainHeaderHeading.classList.add('font-montserrat', 'font-weight-normal')
     homePageMainHeaderHeading.textContent = "Welcome To "
     const homePageMainHeaderHeadingName = document.createElement('span')
     homePageMainHeaderHeadingName.textContent = "Zaytuna"
@@ -51,7 +51,7 @@ function loadHomePage(){
     homePageFeatured.appendChild(homePageFeaturedBackground)
 
     const homePageFeaturedHeading = document.createElement('h1')
-    homePageFeaturedHeading.classList.add('font-montserrat','font-weight-bold')
+    homePageFeaturedHeading.classList.add('font-montserrat', 'font-weight-bold')
     homePageFeaturedHeading.textContent = "Best Dishes Of Zaytuna"
     homePageFeatured.appendChild(homePageFeaturedHeading)
 
@@ -72,9 +72,9 @@ function loadHomePage(){
     homePageFeaturedDishesMandiDishImage.id = "home-page-featured-dishes-mandi-image"
     homePageFeaturedDishesMandiDishImage.classList.add('dish-image')
     homePageFeaturedDishesMandiDishImageWrapper.appendChild(homePageFeaturedDishesMandiDishImage)
-    
+
     const homePageFeaturedDishesMandiTitle = document.createElement('h2')
-    homePageFeaturedDishesMandiTitle.classList.add('font-montserrat','font-weight-bold')
+    homePageFeaturedDishesMandiTitle.classList.add('font-montserrat', 'font-weight-bold')
     homePageFeaturedDishesMandiTitle.textContent = "Mandi"
     homePageFeaturedDishesMandi.appendChild(homePageFeaturedDishesMandiTitle)
 
@@ -98,7 +98,7 @@ function loadHomePage(){
     homePageFeaturedDishesShawarmaDishImageWrapper.appendChild(homePageFeaturedDishesShawarmaDishImage)
 
     const homePageFeaturedDishesShawarmaTitle = document.createElement('h2')
-    homePageFeaturedDishesShawarmaTitle.classList.add('font-montserrat','font-weight-bold')
+    homePageFeaturedDishesShawarmaTitle.classList.add('font-montserrat', 'font-weight-bold')
     homePageFeaturedDishesShawarmaTitle.textContent = "Shawarma"
     homePageFeaturedDishesShawarma.appendChild(homePageFeaturedDishesShawarmaTitle)
 
@@ -122,7 +122,7 @@ function loadHomePage(){
     homePageFeaturedDishesKabsaDishImageWrapper.appendChild(homePageFeaturedDishesKabsaDishImage)
 
     const homePageFeaturedDishesKabsaTitle = document.createElement('h2')
-    homePageFeaturedDishesKabsaTitle.classList.add('font-montserrat','font-weight-bold')
+    homePageFeaturedDishesKabsaTitle.classList.add('font-montserrat', 'font-weight-bold')
     homePageFeaturedDishesKabsaTitle.textContent = "Kabsa"
     homePageFeaturedDishesKabsa.appendChild(homePageFeaturedDishesKabsaTitle)
 
@@ -133,4 +133,16 @@ function loadHomePage(){
 
     content.appendChild(homePageContainer)
 }
-export default loadHomePage
+
+function removeHomePage() {
+    const content = document.getElementById('content')
+    content.innerHTML = ""
+    content.dataset.activeTab = ""
+}
+
+const HomePage = {
+    load: loadHomePage,
+    remove: removeHomePage
+}
+
+export default HomePage
