@@ -16,7 +16,7 @@ function loadHomePage() {
 
     const homePageMainHeader = document.createElement('div')
     homePageMainHeader.id = "home-page-main-header"
-    homePageMainHeader.classList.add('initial-top-padding')
+    homePageMainHeader.classList.add('initial-padding')
     homePageMain.appendChild(homePageMainHeader)
 
     const homePageMainHeaderHeadingContainer = document.createElement('div')

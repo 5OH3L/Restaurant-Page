@@ -252,7 +252,7 @@ function loadMenuPage() {
 
     const menuPageMainHeader = document.createElement('div')
     menuPageMainHeader.id = "menu-page-main-header"
-    menuPageMainHeader.classList.add('initial-top-padding')
+    menuPageMainHeader.classList.add('initial-padding')
     menuPageMain.appendChild(menuPageMainHeader)
 
     const menuPageMainHeaderContainer = document.createElement('div')
