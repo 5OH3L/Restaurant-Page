@@ -3,17 +3,16 @@ import "../styles/utils.css"
 
 import programmerLogo from "../assets/logo.jpg"
 
+import imageCredits from "./image-credits"
 import HomePage from "./home-page"
 import MenuPage from "./menu-page"
 import AboutPage from "./about-page"
 
+const imageCreditsButton = document.getElementById('image-credits-button')
+const imageCreditsClosePopUpButton = document.getElementById('image-credits-close-pop-up')
 const homeButton = document.getElementById('button-home')
 const menuButton = document.getElementById('button-menu')
 const aboutButton = document.getElementById('button-about')
-
-function initImages(){
-    document.getElementById('logo').style.backgroundImage = `url(${programmerLogo})`
-}
 
 function init() {
     homeButton.addEventListener('click', handleSelected)
@@ -21,7 +20,15 @@ function init() {
     aboutButton.addEventListener('click', handleSelected)
     HomePage.load()
     homeButton.classList.add('selected')
+    imageCredits.refresh()
 }
+
+function initImages() {
+    document.getElementById('logo').style.backgroundImage = `url(${programmerLogo})`
+    imageCreditsButton.addEventListener('click', imageCredits.showPopUp)
+    imageCreditsClosePopUpButton.addEventListener('click', imageCredits.closePopUp)
+}
+
 
 function removeSelectedAll() {
     homeButton.classList.remove('selected')
@@ -45,6 +52,7 @@ function removeCurrentContent() {
             break;
     }
 }
+
 function loadSelectedContent(e) {
     let selectedTab = e.target.dataset.tab
 
@@ -73,5 +81,11 @@ function handleSelected(e) {
     window.scrollTo(0, 0)
 }
 
-init()
-initImages()
+window.addEventListener('DOMContentLoaded', () => {
+    init()
+    initImages()
+    const imageCreditsMain = document.getElementById('image-credits-main');
+    requestAnimationFrame(() => {
+        imageCreditsMain.classList.remove('initial');
+    });
+})

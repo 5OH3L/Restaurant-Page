@@ -98,75 +98,13 @@ const menu = [
         price: "$3.00",
     },
 ]
-const dishImages = [
-    {
-        name: "Mandi",
-        backgroundURL: "https://images.pexels.com/photos/18698227/pexels-photo-18698227/free-photo-of-food-photography.jpeg",
-    },
-    {
-        name: "Shawarma",
-        backgroundURL: "https://images.pexels.com/photos/6416559/pexels-photo-6416559.jpeg",
-    },
-    {
-        name: "Kabsa",
-        backgroundURL: "https://images.pexels.com/photos/17650198/pexels-photo-17650198/free-photo-of-top-view-of-kabsa.jpeg",
-    },
-    {
-        name: "Kufta",
-        backgroundURL: "https://i.pinimg.com/736x/c4/3e/ab/c43eab1f5c1aa79d1f44547636b45228.jpg",
-    },
-    {
-        name: "Fattah",
-        backgroundURL: "https://i.pinimg.com/736x/6a/cd/3e/6acd3e884ca2f575a944adff67996d2e.jpg",
-    },
-    {
-        name: "Tagine",
-        backgroundURL: "https://i.pinimg.com/736x/37/52/b5/3752b536266657f5f44d53fd234beaf7.jpg",
-    },
-    {
-        name: "Goulash",
-        backgroundURL: "https://i.pinimg.com/736x/a6/dd/c7/a6ddc788de34f6362a1cf1b62fa3e587.jpg",
-    },
-    {
-        name: "Dolma",
-        backgroundURL: "https://i.pinimg.com/736x/05/2b/6e/052b6e81d3a68568f7c0d4d795e143f4.jpg",
-    },
-    {
-        name: "Baklava",
-        backgroundURL: "https://i.pinimg.com/736x/87/35/f3/8735f3759533c8235ccd68bb4901ec68.jpg",
-    },
-    {
-        name: "Kunafa",
-        backgroundURL: "https://i.pinimg.com/736x/b8/96/21/b89621e3ee857dd8abd2dd7cbdaacc27.jpg",
-    },
-    {
-        name: "Halawet El Jibn",
-        backgroundURL: "https://i.pinimg.com/736x/3e/3e/50/3e3e50f556be9d1de4136be2c2304095.jpg",
-    },
-    {
-        name: "Maamoul",
-        backgroundURL: "https://i.pinimg.com/736x/4e/ca/c2/4ecac2632d9cf68d152f6ff49ade85ab.jpg",
-    },
-    {
-        name: "Mint Tea",
-        backgroundURL: "https://i.pinimg.com/736x/f7/f7/20/f7f720c6f4927bf3217d2ba86c8e2297.jpg",
-    },
-    {
-        name: "Ayran",
-        backgroundURL: "https://i.pinimg.com/736x/6d/44/0b/6d440b4cde3a16fc9b6f5295e738f9f8.jpg",
-    },
-    {
-        name: "Qamar al-Din",
-        backgroundURL: "https://i.pinimg.com/736x/a9/f9/5a/a9f95a89ae1ee8c662b33e58e1d0d126.jpg",
-    },
-    {
-        name: "Rose Water Lemonade",
-        backgroundURL: "https://i.pinimg.com/736x/29/7f/fe/297ffed83d19fda93455649ab642aba4.jpg",
-    },
-]
+import ImageDetails from "./image-details"
 
 function formatName(name) {
     return name.toLowerCase().replace(/\s/g, "")
+}
+function formatDishName(name){
+    return name.split(" ").slice(1).join(" ")
 }
 
 function addDishOnTheMenu(dish, dishesContainer) {
@@ -175,19 +113,8 @@ function addDishOnTheMenu(dish, dishesContainer) {
 
     const menuPageMainDishImage = document.createElement('div')
     menuPageMainDishImage.classList.add('menu-page-main-dish-image', `menu-page-main-dish-image-${formatName(dish.name)}`)
-    let entry = dishImages.find(myDish => formatName(myDish.name) === formatName(dish.name))
-    if (entry && entry.backgroundURL) {
-        const imageLink = document.createElement('a')
-        let backgroundURLWebsite = `https://www.${entry.backgroundURL.split('.com')[ 0 ].split('//')[ 1 ].split('.').at(-1)}.com`
-        if (backgroundURLWebsite === "https://www.pinimg.com") {
-            backgroundURLWebsite = "https://www.pinterest.com"
-        }
-        imageLink.href = backgroundURLWebsite
-        imageLink.target = "_blank"
-        imageLink.rel = "noopener noreferrer"
-        menuPageMainDishImage.appendChild(imageLink)
-        menuPageMainDishImage.style.backgroundImage = `url(${entry.backgroundURL})`
-    }
+    let entry = ImageDetails.find(myDish => formatName(formatDishName(myDish.name)) === formatName(dish.name))
+    if (entry && entry.localURL) { menuPageMainDishImage.style.backgroundImage = `url(${entry.localURL})` }
     menuPageMainDishesDish.appendChild(menuPageMainDishImage)
 
     const menuPageMainDishName = document.createElement('div')

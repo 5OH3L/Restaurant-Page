@@ -1,4 +1,4 @@
-import aboutPageBackgroundImage from "../assets/about-background.jpg"
+import ImageDetails from "./image-details"
 
 function loadAboutPage(){
     const content = document.getElementById('content')
@@ -10,7 +10,7 @@ function loadAboutPage(){
 
     const aboutPageBackground = document.createElement('div')
     aboutPageBackground.id = "about-page-background"
-    aboutPageBackground.style.backgroundImage = `url(${aboutPageBackgroundImage})`
+    aboutPageBackground.style.backgroundImage = `url(${ImageDetails.find(image => image.name === "About Page Background").localURL})`
     aboutPageContainer.appendChild(aboutPageBackground)
 
     const aboutPageHeaderContainer = document.createElement('section')
