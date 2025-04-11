@@ -1,4 +1,4 @@
-import menuPageBackgroundImage from "../assets/menu-background.jpg"
+import ImageDetails from "./image-details"
 
 const menu = [
     {
@@ -98,12 +98,12 @@ const menu = [
         price: "$3.00",
     },
 ]
-import ImageDetails from "./image-details"
 
 function formatName(name) {
     return name.toLowerCase().replace(/\s/g, "")
 }
-function formatDishName(name){
+
+function formatDishName(name) {
     return name.split(" ").slice(1).join(" ")
 }
 
@@ -177,7 +177,7 @@ function loadMenuPage() {
 
     const menuPageMainBackground = document.createElement('div')
     menuPageMainBackground.id = "menu-page-main-background"
-    menuPageMainBackground.style.backgroundImage = `url(${menuPageBackgroundImage})`
+    menuPageMainBackground.style.backgroundImage = `url(${ImageDetails.find(image => image.name === "Menu Page Background").localURL})`
     menuPageMain.appendChild(menuPageMainBackground)
 
     const menuPageMainHeader = document.createElement('div')
