@@ -29,7 +29,6 @@ function initImages() {
     imageCreditsClosePopUpButton.addEventListener('click', imageCredits.closePopUp)
 }
 
-
 function removeSelectedAll() {
     homeButton.classList.remove('selected')
     menuButton.classList.remove('selected')

@@ -1,6 +1,6 @@
 import ImageDetails from "./image-details"
 
-function loadAboutPage(){
+function loadAboutPage() {
     const content = document.getElementById('content')
     content.innerHTML = ""
     content.dataset.activeTab = "about-page"
@@ -24,7 +24,7 @@ function loadAboutPage(){
 
     const aboutPageHeaderHeading = document.createElement('h1')
     aboutPageHeaderHeading.textContent = "About"
-    aboutPageHeaderHeading.classList.add('font-montserrat','font-weight-bold')
+    aboutPageHeaderHeading.classList.add('font-montserrat', 'font-weight-bold')
     aboutPageHeader.appendChild(aboutPageHeaderHeading)
 
     const aboutPageMain = document.createElement('section')
@@ -37,14 +37,14 @@ function loadAboutPage(){
 
     const aboutPageMainRestaurantHeading = document.createElement('h2')
     aboutPageMainRestaurantHeading.textContent = "Zaytuna"
-    aboutPageMainRestaurantHeading.classList.add('font-montserrat','font-weight-bold')
+    aboutPageMainRestaurantHeading.classList.add('font-montserrat', 'font-weight-bold')
     aboutPageMainRestaurant.appendChild(aboutPageMainRestaurantHeading)
 
     const aboutPageMainRestaurantDescription = document.createElement('p')
     aboutPageMainRestaurantDescription.textContent = "Zaytuna embodies the heart of Arabian hospitality, seamlessly blending tradition with luxury. The restaurant offers a culinary journey through the Middle East, where each dish is meticulously crafted using rich spices and fresh ingredients. Guests can expect a visual and gastronomic feast that tantalizes the senses, showcasing the vibrant flavors and warm hospitality synonymous with Middle Eastern culture."
     aboutPageMainRestaurantDescription.classList.add('font-open-sans')
     aboutPageMainRestaurant.appendChild(aboutPageMainRestaurantDescription)
-    
+
     const aboutPageMainDetails = document.createElement('section')
     aboutPageMainDetails.id = "about-page-main-details"
     aboutPageMain.appendChild(aboutPageMainDetails)
@@ -55,7 +55,7 @@ function loadAboutPage(){
 
     const aboutPageMainLocationHeading = document.createElement('h3')
     aboutPageMainLocationHeading.textContent = "Location:"
-    aboutPageMainLocationHeading.classList.add('font-montserrat','font-weight-bold','about-page-main-details-heading')
+    aboutPageMainLocationHeading.classList.add('font-montserrat', 'font-weight-bold', 'about-page-main-details-heading')
     aboutPageMainLocation.appendChild(aboutPageMainLocationHeading)
 
     const aboutPageMainLocationDetailsContainer = document.createElement('div')
@@ -85,7 +85,7 @@ function loadAboutPage(){
 
     const aboutPageMainOpenTimingsHeading = document.createElement('h3')
     aboutPageMainOpenTimingsHeading.textContent = "Open Timings:"
-    aboutPageMainOpenTimingsHeading.classList.add('font-montserrat','font-weight-bold','about-page-main-details-heading')
+    aboutPageMainOpenTimingsHeading.classList.add('font-montserrat', 'font-weight-bold', 'about-page-main-details-heading')
     aboutPageMainOpenTimings.appendChild(aboutPageMainOpenTimingsHeading)
 
     const aboutPageMainOpenTimingsDescription1 = document.createElement('p')
@@ -103,7 +103,7 @@ function loadAboutPage(){
 
     const aboutPageMainHighlightsHeading = document.createElement('h3')
     aboutPageMainHighlightsHeading.textContent = "Highlights:"
-    aboutPageMainHighlightsHeading.classList.add('font-montserrat','font-weight-bold','about-page-main-details-heading')
+    aboutPageMainHighlightsHeading.classList.add('font-montserrat', 'font-weight-bold', 'about-page-main-details-heading')
     aboutPageMainHighlights.appendChild(aboutPageMainHighlightsHeading)
 
     const aboutPageMainHighlightsDescriptionContainer = document.createElement('ul')
@@ -124,13 +124,15 @@ function loadAboutPage(){
     content.appendChild(aboutPageContainer)
 }
 
-function removeAboutPage(){
+function removeAboutPage() {
     const content = document.getElementById('content')
     content.innerHTML = ""
     content.dataset.activeTab = ""
 }
+
 const AboutPage = {
     load: loadAboutPage,
     remove: removeAboutPage
 }
+
 export default AboutPage

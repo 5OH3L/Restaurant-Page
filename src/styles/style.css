@@ -125,7 +125,8 @@ body::selection {
     opacity: 1;
     pointer-events: all;
 }
-#image-credits-main-credits{
+
+#image-credits-main-credits {
     height: 100%;
     width: 100%;
     padding: 1rem 2.5rem;
@@ -150,7 +151,7 @@ body::selection {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-credits-main-image:hover{
+.image-credits-main-image:hover {
     transform: scale(1.05);
     box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.5);
 }

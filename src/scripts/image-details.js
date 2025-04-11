@@ -153,10 +153,13 @@ const ImageDetails = [
         credit: formatCredit("My Recipe Space", "pinterest")
     },
 ]
-function capitalize(string){
-    return string[0].toUpperCase() + string.slice(1).toLowerCase()
+
+function capitalize(string) {
+    return string[ 0 ].toUpperCase() + string.slice(1).toLowerCase()
 }
-function formatCredit(name, website){
+
+function formatCredit(name, website) {
     return `Photo by “${name}” on ${capitalize(website)}`
 }
+
 export default ImageDetails

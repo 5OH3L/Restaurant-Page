@@ -2,10 +2,9 @@ const imageCreditsOverlay = document.getElementById('image-credits-overlay')
 const imageCreditsMain = document.getElementById('image-credits-main')
 const imageCreditsMainCredits = document.getElementById('image-credits-main-credits')
 
-
 import ImageDetails from "./image-details"
 
-function showPopUp(){
+function showPopUp() {
     imageCreditsOverlay.classList.remove('active')
     imageCreditsMain.classList.remove('active')
     imageCreditsOverlay.classList.add('active')
@@ -13,16 +12,17 @@ function showPopUp(){
     imageCreditsMain.focus()
     document.body.style.overflow = "hidden"
 }
-function closePopUp(){
+
+function closePopUp() {
     imageCreditsOverlay.classList.remove('active')
     imageCreditsMain.classList.remove('active')
     document.body.style.overflow = "auto"
 }
 
-function addImageCredits(){
+function addImageCredits() {
     imageCreditsMainCredits.innerHTML = ""
 
-    ImageDetails.forEach( image => {
+    ImageDetails.forEach(image => {
         const imageCreditsMainCreditsImage = document.createElement('div')
         imageCreditsMainCreditsImage.style.backgroundImage = `url(${image.localURL})`
         imageCreditsMainCreditsImage.classList.add('image-credits-main-image')
