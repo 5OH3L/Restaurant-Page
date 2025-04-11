@@ -14,6 +14,165 @@ body::selection {
     background-color: rgba(135, 206, 235, 0.5);
 }
 
+/* Image Credits */
+
+#image-credits {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    pointer-events: none;
+}
+
+#image-credits-button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    margin: 1rem;
+    pointer-events: all;
+    user-select: none;
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#image-credits-close-pop-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    margin-top: -2rem;
+    margin-right: -2px;
+    border-bottom: none;
+    backdrop-filter: blur(0.4rem);
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+}
+
+#image-credits-button:hover,
+#image-credits-close-pop-up:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.5);
+}
+
+#image-credits-button:active,
+#image-credits-close-pop-up:active {
+    transform: scale(0.95);
+}
+
+#image-credits-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+#image-credits-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+    z-index: 25;
+}
+
+#image-credits-overlay.active {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.3rem);
+    pointer-events: all;
+}
+
+#image-credits-main {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    height: 80vh;
+    width: 80vw;
+    color: white;
+    opacity: 0;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    border-top-right-radius: 0;
+    transform: translateY(-150%);
+    will-change: transform, opacity;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    padding: 1rem;
+    z-index: 30;
+}
+
+#image-credits-main.initial {
+    transition: none !important;
+}
+
+#image-credits-main.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+#image-credits-main-credits{
+    height: 100%;
+    width: 100%;
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 2rem;
+}
+
+.image-credits-main-image {
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1rem;
+    height: 18rem;
+    width: 18rem;
+    will-change: transform, box-shadow;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-credits-main-image:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 2rem 0 rgba(255, 255, 255, 0.5);
+}
+
+.image-credits-main-image a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+.image-credits-main-image a h1 {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
 /* Header */
 
 #header {
@@ -35,7 +194,7 @@ body::selection {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 5vw;
+    padding-left: 4rem;
     gap: 1rem;
 }
 
@@ -357,7 +516,7 @@ body::selection {
 }
 
 .home-page-featured-dishes-dish p {
-    max-width: 25vw;
+    max-width: 20rem;
     text-align: center;
 }
 
@@ -466,7 +625,7 @@ body::selection {
 }
 
 .menu-page-main-dishes-dish {
-    width: 17vw;
+    width: 15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -491,20 +650,22 @@ body::selection {
 }
 
 .menu-page-main-dish-image {
-    height: 12vw;
-    width: 12vw;
+    height: 10rem;
+    width: 10rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border: 0.2rem solid lightgray;
     border-radius: 0.5rem;
 }
+
 .menu-page-main-dish-image a {
     height: 100%;
     width: 100%;
     display: block;
     opacity: 0;
 }
+
 .menu-page-main-dish-name {
     max-width: 100%;
     white-space: nowrap;
@@ -519,9 +680,11 @@ body::selection {
     -webkit-line-clamp: 3;
     line-clamp: 3;
     overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
-    width: 14vw;
-    height: 10vh;
+    max-width: 12rem;
+    height: 4rem;
+    line-height: 1.3rem;
 }
 
 .menu-page-main-dish-price {
@@ -549,13 +712,14 @@ body::selection {
 }
 
 /* About Page */
-#about-page{
+#about-page {
     height: 100vh;
     width: 100%;
     position: relative;
     color: white;
 }
-#about-page-background{
+
+#about-page-background {
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -563,7 +727,8 @@ body::selection {
     position: absolute;
     z-index: -1;
 }
-#about-page-background::before{
+
+#about-page-background::before {
     content: "";
     height: 100%;
     width: 100%;
@@ -571,7 +736,8 @@ body::selection {
     backdrop-filter: blur(0.4rem);
     background-color: rgba(0, 0, 0, 0.6);
 }
-#about-page-header-container{
+
+#about-page-header-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -579,18 +745,21 @@ body::selection {
     height: 100%;
     width: 100%;
 }
-#about-page-header h1{
+
+#about-page-header h1 {
     font-size: 3rem;
 }
-#about-page-main{
+
+#about-page-main {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center ;
+    align-items: center;
 }
-#about-page-main-restaurant{
+
+#about-page-main-restaurant {
     height: 50%;
     width: 100%;
     display: flex;
@@ -598,31 +767,37 @@ body::selection {
     justify-content: space-around;
     align-items: center;
 }
-#about-page-main-restaurant h2{
+
+#about-page-main-restaurant h2 {
     font-size: 2rem;
 }
-#about-page-main-restaurant p{
+
+#about-page-main-restaurant p {
     max-width: 90%;
     text-align: center;
     font-size: 1.5rem;
 }
-#about-page-main-details{
+
+#about-page-main-details {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
 }
-#about-page-main-details > section{
+
+#about-page-main-details>section {
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
 }
-.about-page-main-details-heading{
+
+.about-page-main-details-heading {
     font-size: 1.5rem;
 }
-.about-page-main-details-sub-heading{
+
+.about-page-main-details-sub-heading {
     font-size: 1.2rem;
 }
 
