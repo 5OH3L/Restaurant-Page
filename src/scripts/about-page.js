@@ -89,7 +89,7 @@ function loadAboutPage() {
     aboutPageMainOpenTimings.appendChild(aboutPageMainOpenTimingsHeading)
 
     const aboutPageMainOpenTimingsDescription1 = document.createElement('p')
-    aboutPageMainOpenTimingsDescription1.classList.add('about-page-main-details-sub-heading')
+    aboutPageMainOpenTimingsDescription1.classList.add('about-page-main-details-sub-heading', 'font-open-sans')
     aboutPageMainOpenTimingsDescription1.textContent = "Sunday to Thursday:"
     aboutPageMainOpenTimings.appendChild(aboutPageMainOpenTimingsDescription1)
     const aboutPageMainOpenTimingsDescription2 = document.createElement('p')
@@ -110,15 +110,15 @@ function loadAboutPage() {
     aboutPageMainHighlightsDescriptionContainer.classList.add('font-open-sans')
     const aboutPageMainHighlightsDescription1 = document.createElement('li')
     aboutPageMainHighlightsDescription1.textContent = "Community Engagement"
-    aboutPageMainHighlightsDescription1.classList.add('about-page-main-details-sub-heading')
+    aboutPageMainHighlightsDescription1.classList.add('about-page-main-details-sub-heading', 'font-open-sans')
     aboutPageMainHighlights.appendChild(aboutPageMainHighlightsDescription1)
     const aboutPageMainHighlightsDescription2 = document.createElement('li')
     aboutPageMainHighlightsDescription2.textContent = "Diverse Menu Options"
-    aboutPageMainHighlightsDescription2.classList.add('about-page-main-details-sub-heading')
+    aboutPageMainHighlightsDescription2.classList.add('about-page-main-details-sub-heading', 'font-open-sans')
     aboutPageMainHighlights.appendChild(aboutPageMainHighlightsDescription2)
     const aboutPageMainHighlightsDescription3 = document.createElement('li')
     aboutPageMainHighlightsDescription3.textContent = "Halal Cuisine"
-    aboutPageMainHighlightsDescription3.classList.add('about-page-main-details-sub-heading')
+    aboutPageMainHighlightsDescription3.classList.add('about-page-main-details-sub-heading', 'font-open-sans')
     aboutPageMainHighlights.appendChild(aboutPageMainHighlightsDescription3)
 
     content.appendChild(aboutPageContainer)
