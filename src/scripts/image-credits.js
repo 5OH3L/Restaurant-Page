@@ -10,13 +10,13 @@ function showPopUp() {
     imageCreditsOverlay.classList.add('active')
     imageCreditsMain.classList.add('active')
     imageCreditsMain.focus()
-    document.body.style.overflow = "hidden"
+    document.body.style.overflowY = "hidden"
 }
 
 function closePopUp() {
     imageCreditsOverlay.classList.remove('active')
     imageCreditsMain.classList.remove('active')
-    document.body.style.overflow = "auto"
+    document.body.style.overflowY = "auto"
 }
 
 function addImageCredits() {
