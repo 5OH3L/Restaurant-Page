@@ -12,50 +12,60 @@
 </head>
 
 <body>
-    <section id="image-credits">
-        <div id="image-credits-container">
-            <div id="image-credits-overlay"></div>
-            <div id="image-credits-main" class="initial">
-                <div id="image-credits-main-credits">
-                    <div class="image-credits-main-image"><a href="#">
-                            <h1 class="font-montserrat font-weight-bold">Image Credit</h1>
-                        </a></div>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
+    <div id="page-wrapper" style="display: none;">
+        <section id="image-credits">
+            <div id="image-credits-container">
+                <div id="image-credits-overlay"></div>
+                <div id="image-credits-main" class="initial">
+                    <div id="image-credits-main-credits">
+                        <div class="image-credits-main-image"><a href="#">
+                                <h1 class="font-montserrat font-weight-bold">Image Credit</h1>
+                            </a></div>
+                    </div>
+                    <button id="image-credits-close-pop-up" class="font-montserrat font-weight-bold">X</button>
                 </div>
-                <button id="image-credits-close-pop-up" class="font-montserrat font-weight-bold">X</button>
             </div>
+            <button id="image-credits-button" class="font-montserrat font-weight-bold">🡆 Image Credits 🡄</button>
+        </section>
+        <header id="header">
+            <section id="logo-container">
+                <div id="logo"></div>
+                <h1 id="programmer"><a href="https://github.com/5OH3L" target="_blank" rel="noopener noreferrer">Sohel</a>
+                </h1>
+            </section>
+            <nav>
+                <button id="button-home" class="page-links" data-tab="home">Home</button>
+                <button id="button-menu" class="page-links" data-tab="menu">Menu</button>
+                <button id="button-about" class="page-links" data-tab="about">About</button>
+            </nav>
+        </header>
+        <div id="content-loader-wrapper">
+            <div id="content-loader"></div>
         </div>
-        <button id="image-credits-button" class="font-montserrat font-weight-bold">🡆 Image Credits 🡄</button>
-    </section>
-    <header id="header">
-        <section id="logo-container">
-            <div id="logo"></div>
-            <h1 id="programmer"><a href="https://github.com/5OH3L" target="_blank" rel="noopener noreferrer">Sohel</a>
-            </h1>
-        </section>
-        <nav>
-            <button id="button-home" class="page-links" data-tab="home">Home</button>
-            <button id="button-menu" class="page-links" data-tab="menu">Menu</button>
-            <button id="button-about" class="page-links" data-tab="about">About</button>
-        </nav>
-    </header>
-    <div id="content"></div>
-    <footer>
-        <section id="contact-us">
-            <h2 id="contact-us-heading" class="font-montserrat font-weight-bold">Contact Us</h2>
-            <div id="contact-us-main" class="font-open-sans">
-                <section id="contact-us-contacts">
-                    <p id="contact-us-phone-number">Phone Number: 123-456-7890</p>
-                    <p id="contact-us-email">Email: LegitEmail@Really.com</p>
-                    <p id="contact-us-copyright">&#169; 2025 Zaytuna</p>
-                </section>
-                <nav id="contact-us-social-media">
-                    <p id="contact-us-social-media-youtube">YouTube: <a href="#" target="_blank" rel="noopener noreferrer">@Zaytuna</a></p>
-                    <p id="contact-us-social-media-instagram">Instagram: <a href="#" target="_blank" rel="noopener noreferrer">@Zaytuna</a></p>
-                    <p id="contact-us-social-media-twitter">Twitter ( X ): <a href="#" target="_blank" rel="noopener noreferrer">@Zaytuna</a></p>
-                </nav>
-            </div>
-        </section>
-    </footer>
+        <div id="content-wrapper">
+            <div id="content"></div>
+        </div>
+        <footer>
+            <section id="contact-us">
+                <h2 id="contact-us-heading" class="font-montserrat font-weight-bold">Contact Us</h2>
+                <div id="contact-us-main" class="font-open-sans">
+                    <section id="contact-us-contacts">
+                        <p id="contact-us-phone-number">Phone Number: 123-456-7890</p>
+                        <p id="contact-us-email">Email: LegitEmail@Really.com</p>
+                        <p id="contact-us-copyright">&#169; 2025 Zaytuna</p>
+                    </section>
+                    <nav id="contact-us-social-media">
+                        <p id="contact-us-social-media-youtube">YouTube: <a href="#" target="_blank" rel="noopener noreferrer">@Zaytuna</a></p>
+                        <p id="contact-us-social-media-instagram">Instagram: <a href="#" target="_blank" rel="noopener noreferrer">@Zaytuna</a></p>
+                        <p id="contact-us-social-media-twitter">Twitter ( X ): <a href="#" target="_blank" rel="noopener noreferrer">@Zaytuna</a></p>
+                    </nav>
+                </div>
+            </section>
+        </footer>
+    </div>
 </body>
 
 </html>

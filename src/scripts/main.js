@@ -8,6 +8,9 @@ import HomePage from "./home-page"
 import MenuPage from "./menu-page"
 import AboutPage from "./about-page"
 
+const loaderWrapper = document.getElementById('loader-wrapper')
+const pageWrapper = document.getElementById('page-wrapper')
+const contentLoaderWrapper = document.getElementById('content-loader-wrapper')
 const imageCreditsButton = document.getElementById('image-credits-button')
 const imageCreditsClosePopUpButton = document.getElementById('image-credits-close-pop-up')
 const homeButton = document.getElementById('button-home')
@@ -38,6 +41,7 @@ function removeSelectedAll() {
 function removeCurrentContent() {
     const content = document.getElementById('content')
     let activeTab = content.dataset.activeTab
+    contentLoaderWrapper.classList.add('active')
 
     switch (activeTab) {
         case "home-page":
@@ -74,10 +78,23 @@ function handleSelected(e) {
     removeSelectedAll()
     e.target.classList.add('selected')
 
-    removeCurrentContent()
-    loadSelectedContent(e)
+    setTimeout(() => {
+        document.body.style.overflow = "hidden"
+        contentLoaderWrapper.classList.add('active')
+        contentLoaderWrapper.style.pointerEvents = "all"
+    }, 0);
 
-    window.scrollTo(0, 0)
+    setTimeout(() => {
+        removeCurrentContent()
+        loadSelectedContent(e)
+    }, 500);
+
+    setTimeout(() => {
+        window.scrollTo(0, 0)
+        document.body.style.overflowY = "auto"
+        contentLoaderWrapper.classList.remove('active')
+        contentLoaderWrapper.style.pointerEvents = "none"
+    }, 1000);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -88,3 +105,14 @@ window.addEventListener('DOMContentLoaded', () => {
         imageCreditsMain.classList.remove('initial');
     });
 })
+
+window.onload = function () {
+
+    pageWrapper.style.display = "block"
+
+    setTimeout(() => {
+        loaderWrapper.style.opacity = 0;
+        loaderWrapper.style.pointerEvents = "none";
+        document.body.style.overflowY = "auto"
+    }, 500)
+}

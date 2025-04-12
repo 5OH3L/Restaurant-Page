@@ -10,8 +10,84 @@
     --header-height: 10vh;
 }
 
+body {
+    overflow: hidden;
+    overflow-y: hidden;
+    scrollbar-gutter: stable;
+    width: 100vw;
+}
+
 body::selection {
     background-color: rgba(135, 206, 235, 0.5);
+}
+
+/* Loader */
+#loader-wrapper,#content-loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+    position: fixed;
+    will-change: opacity;
+    transition: opacity 0.5s ease;
+}
+#loader-wrapper{
+    pointer-events: all;
+    background-color: #232323;
+    z-index: 30;
+}
+#content-loader-wrapper{
+    pointer-events: none;
+    opacity: 0;
+    background-color: #121212;
+    z-index: 5;
+    will-change: opacity;
+    transition: opacity 0.5s ease;
+}
+#content-loader-wrapper.active{
+    opacity: 1;
+}
+
+#loader,
+#content-loader {
+    width: 80px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-color: #ccc #0000;
+    animation: l16 1s infinite linear;
+}
+
+#loader::before,
+#content-loader::before,
+#loader::after,
+#content-loader::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+}
+
+#loader::before,
+#content-loader::before {
+    border-color: #87ceeb #0000;
+    animation: inherit;
+    animation-duration: .5s;
+    animation-direction: reverse;
+}
+
+#loader::after,
+#content-loader::after {
+    margin: 8px;
+}
+
+@keyframes l16 {
+    100% {
+        transform: rotate(1turn)
+    }
 }
 
 /* Image Credits */
@@ -22,7 +98,7 @@ body::selection {
     justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     z-index: 20;
     pointer-events: none;
 }
@@ -34,7 +110,7 @@ body::selection {
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
-    margin: 1rem;
+    margin: 1rem 2rem;
     pointer-events: all;
     user-select: none;
     cursor: pointer;
@@ -78,14 +154,14 @@ body::selection {
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     pointer-events: none;
 }
 
 #image-credits-overlay {
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
     z-index: 25;
 }
@@ -178,7 +254,7 @@ body::selection {
 
 #header {
     height: var(--header-height);
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -367,12 +443,12 @@ body::selection {
 
 #content {
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 
 #home-page {
     height: 200vh;
-    width: 100%;
+    width: 100vw;
 }
 
 #home-page-main {
@@ -383,7 +459,7 @@ body::selection {
 #home-page-background,
 #home-page-main-header {
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 
 #home-page-background::after {
@@ -475,7 +551,7 @@ body::selection {
 
 #home-page-featured {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -490,7 +566,7 @@ body::selection {
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background-color: rgb(100, 100, 100);
     z-index: -1;
 }
@@ -571,7 +647,7 @@ body::selection {
 
 #menu-page {
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 
 #menu-page-main {
@@ -697,7 +773,7 @@ body::selection {
 #menu-page-main-background {
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -715,7 +791,7 @@ body::selection {
 /* About Page */
 #about-page {
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     position: relative;
     color: white;
 }
@@ -724,7 +800,7 @@ body::selection {
     background-size: cover;
     background-position: center;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     position: absolute;
     z-index: -1;
 }
@@ -806,7 +882,7 @@ body::selection {
 
 footer {
     height: 30vh;
-    width: 100%;
+    width: 100vw;
     color: white;
     background-color: #343434;
     display: flex;
