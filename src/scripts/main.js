@@ -3,7 +3,7 @@ import "../styles/utils.css"
 
 import programmerLogo from "../assets/logo.jpg"
 
-import imageCredits from "./image-credits"
+import credits from "./credit"
 import HomePage from "./home-page"
 import MenuPage from "./menu-page"
 import AboutPage from "./about-page"
@@ -11,25 +11,22 @@ import AboutPage from "./about-page"
 const loaderWrapper = document.getElementById('loader-wrapper')
 const pageWrapper = document.getElementById('page-wrapper')
 const contentLoaderWrapper = document.getElementById('content-loader-wrapper')
-const imageCreditsButton = document.getElementById('image-credits-button')
-const imageCreditsClosePopUpButton = document.getElementById('image-credits-close-pop-up')
+const creditButton = document.getElementById('credit-button')
+const creditClosePopUpButton = document.getElementById('credit-close-pop-up-button')
 const homeButton = document.getElementById('button-home')
 const menuButton = document.getElementById('button-menu')
 const aboutButton = document.getElementById('button-about')
 
 function init() {
+    document.getElementById('logo').style.backgroundImage = `url(${programmerLogo})`
     homeButton.addEventListener('click', handleSelected)
     menuButton.addEventListener('click', handleSelected)
     aboutButton.addEventListener('click', handleSelected)
     HomePage.load()
     homeButton.classList.add('selected')
-    imageCredits.refresh()
-}
-
-function initImages() {
-    document.getElementById('logo').style.backgroundImage = `url(${programmerLogo})`
-    imageCreditsButton.addEventListener('click', imageCredits.showPopUp)
-    imageCreditsClosePopUpButton.addEventListener('click', imageCredits.closePopUp)
+    creditButton.addEventListener('click', credits.showPopUp)
+    creditClosePopUpButton.addEventListener('click', credits.closePopUp)
+    credits.refresh()
 }
 
 function removeSelectedAll() {
@@ -99,10 +96,9 @@ function handleSelected(e) {
 
 window.addEventListener('DOMContentLoaded', () => {
     init()
-    initImages()
-    const imageCreditsMain = document.getElementById('image-credits-main');
+    const creditMain = document.getElementById('credit-main');
     requestAnimationFrame(() => {
-        imageCreditsMain.classList.remove('initial');
+        creditMain.classList.remove('initial');
     });
 })
 
