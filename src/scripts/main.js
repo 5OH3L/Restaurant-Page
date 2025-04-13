@@ -1,7 +1,7 @@
 import "../styles/style.css"
 import "../styles/utils.css"
 
-import programmerLogo from "../assets/logo.jpg"
+import programmerLogo from "../assets/logo.webp"
 
 import credits from "./credit"
 import HomePage from "./home-page"
