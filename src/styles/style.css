@@ -226,6 +226,7 @@ body::selection {
 }
 
 #credit-main-images {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -431,6 +432,7 @@ body::selection {
     width: calc(var(--header-height) * 0.8);
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: linear-gradient(-45deg, #505050, #000000, #505050);
     border-radius: 100%;
     border: 2px solid white;
 }
@@ -546,6 +548,7 @@ body::selection {
 
 #home-page-background {
     position: absolute;
+    background-image: url(../assets/background-images/main-background.webp);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -713,6 +716,7 @@ body::selection {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: linear-gradient(#444444, #000000);
 }
 
 /* Menu Page */
@@ -801,18 +805,12 @@ body::selection {
 .menu-page-main-dish-image {
     height: 10rem;
     width: 10rem;
+    background-image: linear-gradient(135deg, rgba(68, 68, 68, 0.6), rgba(0, 0, 0, 0.6));
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border: 0.2rem solid lightgray;
     border-radius: 0.5rem;
-}
-
-.menu-page-main-dish-image a {
-    height: 100%;
-    width: 100%;
-    display: block;
-    opacity: 0;
 }
 
 .menu-page-main-dish-name {
@@ -846,6 +844,7 @@ body::selection {
     position: absolute;
     height: 100%;
     width: 100vw;
+    background-image: url(../assets/background-images/menu-background.webp);
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -869,6 +868,7 @@ body::selection {
 }
 
 #about-page-background {
+    background-image: url(../assets/background-images/about-background.webp);
     background-size: cover;
     background-position: center;
     height: 100%;

@@ -1,5 +1,3 @@
-import ImageDetails from "./image-details"
-
 const menu = [
     {
         name: "Mandi",
@@ -103,18 +101,12 @@ function formatName(name) {
     return name.toLowerCase().replace(/\s/g, "")
 }
 
-function formatDishName(name) {
-    return name.split(" ").slice(1).join(" ")
-}
-
 function addDishOnTheMenu(dish, dishesContainer) {
     const menuPageMainDishesDish = document.createElement('div')
     menuPageMainDishesDish.classList.add("menu-page-main-dishes-dish")
 
     const menuPageMainDishImage = document.createElement('div')
     menuPageMainDishImage.classList.add('menu-page-main-dish-image', `menu-page-main-dish-image-${formatName(dish.name)}`)
-    let entry = ImageDetails.find(myDish => formatName(formatDishName(myDish.name)) === formatName(dish.name))
-    if (entry && entry.localURL) { menuPageMainDishImage.style.backgroundImage = `url(${entry.localURL})` }
     menuPageMainDishesDish.appendChild(menuPageMainDishImage)
 
     const menuPageMainDishName = document.createElement('div')
@@ -177,7 +169,6 @@ function loadMenuPage() {
 
     const menuPageMainBackground = document.createElement('div')
     menuPageMainBackground.id = "menu-page-main-background"
-    menuPageMainBackground.style.backgroundImage = `url(${ImageDetails.find(image => image.name === "Menu Page Background").localURL})`
     menuPageMain.appendChild(menuPageMainBackground)
 
     const menuPageMainHeader = document.createElement('div')

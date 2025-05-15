@@ -1,8 +1,6 @@
 import "../styles/style.css"
 import "../styles/utils.css"
 
-import programmerLogo from "../assets/logo.webp"
-
 import credits from "./credit"
 import HomePage from "./home-page"
 import MenuPage from "./menu-page"
@@ -18,7 +16,6 @@ const menuButton = document.getElementById('button-menu')
 const aboutButton = document.getElementById('button-about')
 
 function init() {
-    document.getElementById('logo').style.backgroundImage = `url(${programmerLogo})`
     homeButton.addEventListener('click', handleSelected)
     menuButton.addEventListener('click', handleSelected)
     aboutButton.addEventListener('click', handleSelected)
